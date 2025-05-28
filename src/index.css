@@ -1,0 +1,204 @@
+/* VibeCheckQuizApp.css */
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-5%);
+  }
+  50% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* General container */
+.vibe-container {
+  min-height: 100vh;
+  background: linear-gradient(to right, #dbeafe, #ede9fe, #fce7f3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Question Text */
+.vibe-question {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4f46e5;
+  margin-bottom: 1rem;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Option Buttons */
+.vibe-option {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  padding: 1rem;
+  margin: 0.5rem auto;
+  background: linear-gradient(to right, #8b5cf6, #ec4899);
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.vibe-option:hover {
+  transform: scale(1.05);
+}
+
+/* Loading Text */
+.vibe-loading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #7c3aed;
+  animation: pulse 1.5s infinite;
+}
+
+/* Result Page */
+.vibe-result {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #e9d5ff, #fbcfe8, #fef9c3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.vibe-result h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #6b21a8;
+  margin-bottom: 1rem;
+  animation: bounce 1s infinite;
+  text-shadow: 2px 2px white;
+}
+
+.vibe-result img {
+  width: 14rem;
+  height: 14rem;
+  margin-bottom: 1rem;
+  border-radius: 9999px;
+  border: 8px solid white;
+  box-shadow: 0 8px 16px rgba(9, 86, 157, 0.2);
+  animation: spin-slow 8s linear infinite;
+}
+
+.vibe-result p {
+  font-size: 1.25rem;
+  color: #374151;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.vibe-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.vibe-buttons button,
+.vibe-buttons a {
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  transition: background 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.vibe-download {
+  background-color: #16a34a;
+}
+
+.vibe-download:hover {
+  background-color: #15803d;
+}
+
+.vibe-share {
+  background-color: #3b82f6;
+}
+
+.vibe-share:hover {
+  background-color: #2563eb;
+}
+
+.vibe-retake {
+  background-color: #1953a3;
+  margin-top: 1.5rem;
+}
+
+.vibe-retake:hover {
+  background-color: #9397a0;
+}
+
+.animated-vibe-check {
+  font-size: 4rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 2rem;
+  background: linear-gradient(270deg, #ff0080, #7928ca, #ff0080, #ff8c00);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 8s ease infinite, bounce 1.5s ease infinite;
+  letter-spacing: 0.2em;
+  user-select: none;
+  cursor: default;
+}
+
+/* Gradient background animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Bounce animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
